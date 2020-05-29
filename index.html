@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Track all of your expenses">
+  <meta name="author" content="Kevin Abraham"> 
+  <meta name="keywords" content="Javascript, Dollars, Expenses, Visualize, Graphs, Charts, Purchases">
+  <!-- Toast UI -->
+  <link rel="stylesheet" href="https://uicdn.toast.com/tui.chart/latest/tui-chart.min.css">
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet"> 
+  <!-- Personal CSS -->
+  <link rel="stylesheet" href="style.css">
+  <title>Expense Tracker</title>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper blue darken-3">
+      <a href="#" class="brand-logo right">Expense Tracker</a> 
+    </div>
+  </nav>
+  <!-- Input Card -->
+  <div class="container" id="input-container">
+    <h3 class="header" id="main-header">Enter your Expenses</h3>
+    <div class="col s12 m7" id="cardColumn">
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <div class="card-content">
+            <!-- Input Data -->
+            <form>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input type="text" id="expense-name">
+                  <label for="expense-name">Expense</label>
+                </div>
+                <div class="input-field col s6">
+                  <input type="number" id="expense-cost">
+                  <label for="expense-cost">Cost</label>
+                </div>
+              </div>
+              <div class="row">           
+                <div class="input-field col s12">
+                  <select id="category-selection">
+                    <option value="food">Food</option>
+                    <option value="buisness">Buisness</option>
+                    <option value="livingExpense">Living Expense</option>
+                    <option value="leisure">Leisure</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <label>Expense Category</label>
+                </div>
+              </div>
+              <div class="row">           
+                <div class="input-field col s12">
+                  <select id="day">
+                    <option value="monday">Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                    <option value="friday">Friday</option>
+                    <option value="saturday">Saturday</option>
+                    <option value="sunday">Sunday</option>
+                  </select>
+                  <label>Day of the Week</label>
+                </div>
+              </div>
+            </form>
+            <!-- Add the butons -->
+            <a class="waves-effect waves-light blue btn" id="addBtn">Add Expense</a>
+            <a class="waves-effect waves-light purple btn" id="editBtn">Edit Item</a>
+            <a class="waves-effect waves-light red btn" id="deleteBtn">Delete Item</a>
+            <a class="waves-effect waves-light deep-orange btn" id="backBtn">Back</a>
+            <a class="waves-effect waves-light black btn" id="visBtn">Visualize</a>
+
+            <!-- Create the Chart Options Modal Trigger -->
+            <a class="waves-effect waves-light grey btn modal-trigger" id="chart-options" href="#chartOptionsSet">Chart Options</a>
+             <!-- Modal Structure -->
+            <div id="chartOptionsSet" class="modal">
+              <div class="modal-content">
+                <h4>Chart Options</h4>
+                <br>
+                <form>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <select id="chart-day">
+                        <option value="monday">Monday</option>
+                        <option value="tuesday">Tuesday</option>
+                        <option value="wednesday">Wednesday</option>
+                        <option value="thursday">Thursday</option>
+                        <option value="friday">Friday</option>
+                        <option value="saturday">Saturday</option>
+                        <option value="sunday">Sunday</option>
+                        <option value="week">Full Week</option>
+                      </select>
+                      <label>Day of the Week</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <select id="chart-type">
+                        <option value="pie">Pie</option>
+                        <option value="bar">Bar</option>
+                        <option value="doughnut">Doughnut</option>
+                      </select>
+                      <label>Chart Type</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="chartOptionsBack">Back</a>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="chartOptionsSave">Save</a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- Create a list of checkbox options -->
+    <!-- Output Text -->
+    <div class="col s12">
+      <h3>Expenses</h3>
+      <div class="collection" id="expense-collection">
+      </div>
+    </div>
+    <!-- Visualization of data -->
+    <br>
+    <br>
+    <div class="col s12" id="c-area">
+      <canvas id="daily-chart"></canvas> 
+    </div>
+  </div>
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- Chart JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!-- Materialize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Font Awsome -->
+  <script src="https://kit.fontawesome.com/163bdaf9ac.js" crossorigin="anonymous"></script>
+  <!-- Personal JS -->
+  <script src="app.js"></script>
+</body>
+</html>

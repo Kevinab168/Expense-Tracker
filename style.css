@@ -1,0 +1,37 @@
+/* Presets to ensure that it doesn't appear on the load of the screen */
+#editBtn { 
+  display: none; 
+}
+
+#deleteBtn { 
+  display: none; 
+}
+
+#backBtn { 
+  display: none; 
+}
+
+#visBtn { 
+  display: inline-block; 
+  float: right; 
+}
+
+/* General Styling */
+/* Whole Document */
+
+* { 
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+/* Alerts */
+/* Error Alerts */
+.error { 
+  margin-bottom: 0.9em; 
+  padding: 1em 2em; 
+  padding-bottom: 2em;  
+  height: 30px; 
+  color: white; 
+  width: 100%; 
+}
